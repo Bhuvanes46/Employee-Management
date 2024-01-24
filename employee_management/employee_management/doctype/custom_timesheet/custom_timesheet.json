@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TIMESHEET-{YYYY}-{####}",
+ "creation": "2024-01-17 13:32:31.952665",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "amended_from",
+  "date",
+  "column_break_xelxp",
+  "project_id",
+  "project_name",
+  "section_break_dlny2",
+  "timesheet_details",
+  "work_from_home",
+  "half_day",
+  "total_hours"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Custom Timesheet",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Custom Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.full_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_id",
+   "fieldtype": "Link",
+   "label": "Project ID",
+   "options": "Custom Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project_id.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Project Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "timesheet_details",
+   "fieldtype": "Table",
+   "label": "Timesheet Details",
+   "options": "Timesheet Details",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "work_from_home",
+   "fieldtype": "Check",
+   "label": "Work from Home"
+  },
+  {
+   "default": "0",
+   "fieldname": "half_day",
+   "fieldtype": "Check",
+   "label": "Half day"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total hours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xelxp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_dlny2",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-18 17:06:49.987356",
+ "modified_by": "Administrator",
+ "module": "Employee Management",
+ "name": "Custom Timesheet",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
